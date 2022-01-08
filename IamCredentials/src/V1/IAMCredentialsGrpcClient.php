@@ -16,7 +16,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-namespace Google\Cloud\Iam\Credentials\V1;
+namespace Google\Iam\Credentials\V1;
 
 /**
  * A service account is a special type of Google account that belongs to your
@@ -42,61 +42,61 @@ class IAMCredentialsGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Generates an OAuth 2.0 access token for a service account.
-     * @param \Google\Cloud\Iam\Credentials\V1\GenerateAccessTokenRequest $argument input argument
+     * @param \Google\Iam\Credentials\V1\GenerateAccessTokenRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function GenerateAccessToken(\Google\Cloud\Iam\Credentials\V1\GenerateAccessTokenRequest $argument,
+    public function GenerateAccessToken(\Google\Iam\Credentials\V1\GenerateAccessTokenRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.iam.credentials.v1.IAMCredentials/GenerateAccessToken',
         $argument,
-        ['\Google\Cloud\Iam\Credentials\V1\GenerateAccessTokenResponse', 'decode'],
+        ['\Google\Iam\Credentials\V1\GenerateAccessTokenResponse', 'decode'],
         $metadata, $options);
     }
 
     /**
      * Generates an OpenID Connect ID token for a service account.
-     * @param \Google\Cloud\Iam\Credentials\V1\GenerateIdTokenRequest $argument input argument
+     * @param \Google\Iam\Credentials\V1\GenerateIdTokenRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function GenerateIdToken(\Google\Cloud\Iam\Credentials\V1\GenerateIdTokenRequest $argument,
+    public function GenerateIdToken(\Google\Iam\Credentials\V1\GenerateIdTokenRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.iam.credentials.v1.IAMCredentials/GenerateIdToken',
         $argument,
-        ['\Google\Cloud\Iam\Credentials\V1\GenerateIdTokenResponse', 'decode'],
+        ['\Google\Iam\Credentials\V1\GenerateIdTokenResponse', 'decode'],
         $metadata, $options);
     }
 
     /**
      * Signs a blob using a service account's system-managed private key.
-     * @param \Google\Cloud\Iam\Credentials\V1\SignBlobRequest $argument input argument
+     * @param \Google\Iam\Credentials\V1\SignBlobRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function SignBlob(\Google\Cloud\Iam\Credentials\V1\SignBlobRequest $argument,
+    public function SignBlob(\Google\Iam\Credentials\V1\SignBlobRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.iam.credentials.v1.IAMCredentials/SignBlob',
         $argument,
-        ['\Google\Cloud\Iam\Credentials\V1\SignBlobResponse', 'decode'],
+        ['\Google\Iam\Credentials\V1\SignBlobResponse', 'decode'],
         $metadata, $options);
     }
 
     /**
      * Signs a JWT using a service account's system-managed private key.
-     * @param \Google\Cloud\Iam\Credentials\V1\SignJwtRequest $argument input argument
+     * @param \Google\Iam\Credentials\V1\SignJwtRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function SignJwt(\Google\Cloud\Iam\Credentials\V1\SignJwtRequest $argument,
+    public function SignJwt(\Google\Iam\Credentials\V1\SignJwtRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.iam.credentials.v1.IAMCredentials/SignJwt',
         $argument,
-        ['\Google\Cloud\Iam\Credentials\V1\SignJwtResponse', 'decode'],
+        ['\Google\Iam\Credentials\V1\SignJwtResponse', 'decode'],
         $metadata, $options);
     }
 
