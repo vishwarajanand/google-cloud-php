@@ -28,7 +28,7 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
      */
     private $description = null;
     /**
-     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging. This field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled. This field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
      *
      * Generated from protobuf field <code>optional bool enable_flow_logs = 151544420;</code>
      */
@@ -71,7 +71,7 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
      */
     private $ipv6_access_type = null;
     /**
-     * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
+     * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork. Note this will be for private google access only eventually.
      *
      * Generated from protobuf field <code>optional string ipv6_cidr_range = 273141258;</code>
      */
@@ -171,7 +171,7 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
      *     @type string $description
      *           An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time.
      *     @type bool $enable_flow_logs
-     *           Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging. This field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+     *           Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled. This field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
      *     @type string $external_ipv6_prefix
      *           [Output Only] The range of external IPv6 addresses that are owned by this subnetwork.
      *     @type string $fingerprint
@@ -186,7 +186,7 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
      *           The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
      *           Check the Ipv6AccessType enum for the list of possible values.
      *     @type string $ipv6_cidr_range
-     *           [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
+     *           [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork. Note this will be for private google access only eventually.
      *     @type string $kind
      *           [Output Only] Type of the resource. Always compute#subnetwork for Subnetwork resources.
      *     @type \Google\Cloud\Compute\V1\SubnetworkLogConfig $log_config
@@ -298,7 +298,7 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging. This field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled. This field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
      *
      * Generated from protobuf field <code>optional bool enable_flow_logs = 151544420;</code>
      * @return bool
@@ -319,7 +319,7 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging. This field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled. This field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
      *
      * Generated from protobuf field <code>optional bool enable_flow_logs = 151544420;</code>
      * @param bool $var
@@ -552,7 +552,7 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
+     * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork. Note this will be for private google access only eventually.
      *
      * Generated from protobuf field <code>optional string ipv6_cidr_range = 273141258;</code>
      * @return string
@@ -573,7 +573,7 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
+     * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork. Note this will be for private google access only eventually.
      *
      * Generated from protobuf field <code>optional string ipv6_cidr_range = 273141258;</code>
      * @param string $var

@@ -708,11 +708,9 @@ class FirewallPoliciesClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $etag = 'etag3123477';
-        $iamOwned = false;
         $version = 351608024;
         $expectedResponse = new Policy();
         $expectedResponse->setEtag($etag);
-        $expectedResponse->setIamOwned($iamOwned);
         $expectedResponse->setVersion($version);
         $transport->addResponse($expectedResponse);
         // Mock request
@@ -871,8 +869,7 @@ class FirewallPoliciesClientTest extends GeneratedTest
         $operationsTransport->addResponse($completeOperation);
         // Mock request
         $firewallPolicyResource = new FirewallPolicy();
-        $parentId = 'parentId2070327504';
-        $response = $client->insert($firewallPolicyResource, $parentId);
+        $response = $client->insert($firewallPolicyResource);
         $this->assertFalse($response->isDone());
         $apiRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($apiRequests));
@@ -883,8 +880,6 @@ class FirewallPoliciesClientTest extends GeneratedTest
         $this->assertSame('/google.cloud.compute.v1.FirewallPolicies/Insert', $actualApiFuncCall);
         $actualValue = $actualApiRequestObject->getFirewallPolicyResource();
         $this->assertProtobufEquals($firewallPolicyResource, $actualValue);
-        $actualValue = $actualApiRequestObject->getParentId();
-        $this->assertProtobufEquals($parentId, $actualValue);
         $expectedOperationsRequestObject = new GetGlobalOrganizationOperationRequest();
         $expectedOperationsRequestObject->setOperation($completeOperation->getName());
         $response->pollUntilComplete([
@@ -938,8 +933,7 @@ class FirewallPoliciesClientTest extends GeneratedTest
         $operationsTransport->addResponse(null, $status);
         // Mock request
         $firewallPolicyResource = new FirewallPolicy();
-        $parentId = 'parentId2070327504';
-        $response = $client->insert($firewallPolicyResource, $parentId);
+        $response = $client->insert($firewallPolicyResource);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
         try {
@@ -1116,8 +1110,7 @@ class FirewallPoliciesClientTest extends GeneratedTest
         $operationsTransport->addResponse($completeOperation);
         // Mock request
         $firewallPolicy = 'firewallPolicy1035044177';
-        $parentId = 'parentId2070327504';
-        $response = $client->move($firewallPolicy, $parentId);
+        $response = $client->move($firewallPolicy);
         $this->assertFalse($response->isDone());
         $apiRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($apiRequests));
@@ -1128,8 +1121,6 @@ class FirewallPoliciesClientTest extends GeneratedTest
         $this->assertSame('/google.cloud.compute.v1.FirewallPolicies/Move', $actualApiFuncCall);
         $actualValue = $actualApiRequestObject->getFirewallPolicy();
         $this->assertProtobufEquals($firewallPolicy, $actualValue);
-        $actualValue = $actualApiRequestObject->getParentId();
-        $this->assertProtobufEquals($parentId, $actualValue);
         $expectedOperationsRequestObject = new GetGlobalOrganizationOperationRequest();
         $expectedOperationsRequestObject->setOperation($completeOperation->getName());
         $response->pollUntilComplete([
@@ -1183,8 +1174,7 @@ class FirewallPoliciesClientTest extends GeneratedTest
         $operationsTransport->addResponse(null, $status);
         // Mock request
         $firewallPolicy = 'firewallPolicy1035044177';
-        $parentId = 'parentId2070327504';
-        $response = $client->move($firewallPolicy, $parentId);
+        $response = $client->move($firewallPolicy);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
         try {
@@ -1676,11 +1666,9 @@ class FirewallPoliciesClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $etag = 'etag3123477';
-        $iamOwned = false;
         $version = 351608024;
         $expectedResponse = new Policy();
         $expectedResponse->setEtag($etag);
-        $expectedResponse->setIamOwned($iamOwned);
         $expectedResponse->setVersion($version);
         $transport->addResponse($expectedResponse);
         // Mock request

@@ -147,6 +147,11 @@
                                 "patch"
                             ]
                         },
+                        "SetEdgeSecurityPolicy": {
+                            "methods": [
+                                "setEdgeSecurityPolicy"
+                            ]
+                        },
                         "Update": {
                             "methods": [
                                 "update"
@@ -204,6 +209,11 @@
                         "Patch": {
                             "methods": [
                                 "patch"
+                            ]
+                        },
+                        "SetEdgeSecurityPolicy": {
+                            "methods": [
+                                "setEdgeSecurityPolicy"
                             ]
                         },
                         "SetSecurityPolicy": {
@@ -1187,6 +1197,11 @@
                                 "reset"
                             ]
                         },
+                        "Resume": {
+                            "methods": [
+                                "resume"
+                            ]
+                        },
                         "SendDiagnosticInterrupt": {
                             "methods": [
                                 "sendDiagnosticInterrupt"
@@ -1270,6 +1285,11 @@
                         "Stop": {
                             "methods": [
                                 "stop"
+                            ]
+                        },
+                        "Suspend": {
+                            "methods": [
+                                "suspend"
                             ]
                         },
                         "TestIamPermissions": {
@@ -1426,6 +1446,50 @@
             "clients": {
                 "grpc": {
                     "libraryClient": "LicensesGapicClient",
+                    "rpcs": {
+                        "Delete": {
+                            "methods": [
+                                "delete"
+                            ]
+                        },
+                        "Get": {
+                            "methods": [
+                                "get"
+                            ]
+                        },
+                        "GetIamPolicy": {
+                            "methods": [
+                                "getIamPolicy"
+                            ]
+                        },
+                        "Insert": {
+                            "methods": [
+                                "insert"
+                            ]
+                        },
+                        "List": {
+                            "methods": [
+                                "list"
+                            ]
+                        },
+                        "SetIamPolicy": {
+                            "methods": [
+                                "setIamPolicy"
+                            ]
+                        },
+                        "TestIamPermissions": {
+                            "methods": [
+                                "testIamPermissions"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "MachineImages": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "MachineImagesGapicClient",
                     "rpcs": {
                         "Delete": {
                             "methods": [
@@ -2053,6 +2117,11 @@
                             "methods": [
                                 "list"
                             ]
+                        },
+                        "Update": {
+                            "methods": [
+                                "update"
+                            ]
                         }
                     }
                 }
@@ -2667,6 +2736,11 @@
                             "methods": [
                                 "testIamPermissions"
                             ]
+                        },
+                        "Update": {
+                            "methods": [
+                                "update"
+                            ]
                         }
                     }
                 }
@@ -2940,6 +3014,11 @@
                         "GetIamPolicy": {
                             "methods": [
                                 "getIamPolicy"
+                            ]
+                        },
+                        "Insert": {
+                            "methods": [
+                                "insert"
                             ]
                         },
                         "List": {

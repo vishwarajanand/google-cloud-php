@@ -331,6 +331,7 @@ class SecurityPoliciesClientTest extends GeneratedTest
         $kind = 'kind3292052';
         $name = 'name3373707';
         $selfLink = 'selfLink-1691268851';
+        $type = 'type3575610';
         $expectedResponse = new SecurityPolicy();
         $expectedResponse->setCreationTimestamp($creationTimestamp);
         $expectedResponse->setDescription($description);
@@ -339,6 +340,7 @@ class SecurityPoliciesClientTest extends GeneratedTest
         $expectedResponse->setKind($kind);
         $expectedResponse->setName($name);
         $expectedResponse->setSelfLink($selfLink);
+        $expectedResponse->setType($type);
         $transport->addResponse($expectedResponse);
         // Mock request
         $project = 'project-309310695';
