@@ -1237,6 +1237,9 @@ class DatabaseTest extends TestCase
         $this->connection->executeStreamingSql(Argument::withEntry('session', $sessName))
             ->shouldBeCalled()
             ->willReturn($this->resultGenerator());
+        $this->connection->getSession(Argument::any(), Argument::any())
+            ->shouldBeCalled()
+            ->willReturn(true);
 
         $this->refreshOperation($this->database, $this->connection->reveal());
 
@@ -1254,6 +1257,9 @@ class DatabaseTest extends TestCase
         $this->connection->executeStreamingSql(Argument::withEntry('session', $sessName))
             ->shouldBeCalled()
             ->willReturn($this->resultGenerator());
+        $this->connection->getSession(Argument::any(), Argument::any())
+            ->shouldBeCalled()
+            ->willReturn(true);
 
         $this->refreshOperation($this->database, $this->connection->reveal());
 

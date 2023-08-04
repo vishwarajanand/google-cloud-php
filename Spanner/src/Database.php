@@ -2067,7 +2067,8 @@ class Database
      */
     private function selectSession($context = SessionPoolInterface::CONTEXT_READ, array $options = [])
     {
-        if ($this->session) {
+        // Todo: consider adding a check to validate session for exists and/or is valid
+        if ($this->session && $this->session->exists()) {
             return $this->session;
         }
 

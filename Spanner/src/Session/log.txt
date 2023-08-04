@@ -1,0 +1,524 @@
+➜  Spanner git:(main) ✗ echo "this log was generated when orphaned sessions are purged in maintain"
+this log was generated when orphaned sessions are purged in maintain
+➜  Spanner git:(main) ✗ php src/a.php
+#### Sessions
+
+{
+    "queue": [],
+    "inUse": {
+        "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq4WPgCIZa6O2qFH2T_Y4zPDbnIp7qKZsp_pzHhid7n7c7CDv0_FRwClYA": {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq4WPgCIZa6O2qFH2T_Y4zPDbnIp7qKZsp_pzHhid7n7c7CDv0_FRwClYA",
+            "expiration": "Tue, 25 Jul 2023 18:21:41 +0000",
+            "creation": "Tue, 25 Jul 2023 17:21:33 +0000",
+            "lastActive": "Tue, 25 Jul 2023 17:22:55 +0000"
+        },
+        "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq79KO07RfjfFAuuo61RoocVV7NbYWCTUgjqcG7UvP2GpEMnr_iFTmqGkQ": {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq79KO07RfjfFAuuo61RoocVV7NbYWCTUgjqcG7UvP2GpEMnr_iFTmqGkQ",
+            "expiration": "Tue, 25 Jul 2023 18:23:42 +0000",
+            "creation": "Tue, 25 Jul 2023 17:23:42 +0000",
+            "lastActive": "Tue, 25 Jul 2023 17:23:42 +0000"
+        }
+    },
+    "toCreate": [],
+    "windowStart": "Tue, 25 Jul 2023 17:21:33 +0000",
+    "maxInUseSessions": 4,
+    "maintainTime": "Tue, 25 Jul 2023 17:23:59 +0000"
+}
+#### Sessions
+
+{
+    "queue": [],
+    "inUse": {
+        "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq4WPgCIZa6O2qFH2T_Y4zPDbnIp7qKZsp_pzHhid7n7c7CDv0_FRwClYA": {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq4WPgCIZa6O2qFH2T_Y4zPDbnIp7qKZsp_pzHhid7n7c7CDv0_FRwClYA",
+            "expiration": "Tue, 25 Jul 2023 18:21:41 +0000",
+            "creation": "Tue, 25 Jul 2023 17:21:33 +0000",
+            "lastActive": "Tue, 25 Jul 2023 17:22:55 +0000"
+        },
+        "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq79KO07RfjfFAuuo61RoocVV7NbYWCTUgjqcG7UvP2GpEMnr_iFTmqGkQ": {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq79KO07RfjfFAuuo61RoocVV7NbYWCTUgjqcG7UvP2GpEMnr_iFTmqGkQ",
+            "expiration": "Tue, 25 Jul 2023 18:23:42 +0000",
+            "creation": "Tue, 25 Jul 2023 17:23:42 +0000",
+            "lastActive": "Tue, 25 Jul 2023 17:23:42 +0000"
+        }
+    },
+    "toCreate": [],
+    "windowStart": "Tue, 25 Jul 2023 17:21:33 +0000",
+    "maxInUseSessions": 4,
+    "maintainTime": "Tue, 25 Jul 2023 17:23:59 +0000"
+}
+
+####
+1. Call count 1 at Tue, 25 Jul 2023 17:25:22 +0000
+#### Sessions
+
+{
+    "queue": [],
+    "inUse": {
+        "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq4WPgCIZa6O2qFH2T_Y4zPDbnIp7qKZsp_pzHhid7n7c7CDv0_FRwClYA": {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq4WPgCIZa6O2qFH2T_Y4zPDbnIp7qKZsp_pzHhid7n7c7CDv0_FRwClYA",
+            "expiration": "Tue, 25 Jul 2023 18:21:41 +0000",
+            "creation": "Tue, 25 Jul 2023 17:21:33 +0000",
+            "lastActive": "Tue, 25 Jul 2023 17:22:55 +0000"
+        },
+        "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq79KO07RfjfFAuuo61RoocVV7NbYWCTUgjqcG7UvP2GpEMnr_iFTmqGkQ": {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq79KO07RfjfFAuuo61RoocVV7NbYWCTUgjqcG7UvP2GpEMnr_iFTmqGkQ",
+            "expiration": "Tue, 25 Jul 2023 18:23:42 +0000",
+            "creation": "Tue, 25 Jul 2023 17:23:42 +0000",
+            "lastActive": "Tue, 25 Jul 2023 17:23:42 +0000"
+        },
+        "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq5IpiRVO2BjMcpkfeDxstC8vO5NImCF61b8lkZjExImtiXkq0-zxMBU2w": {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq5IpiRVO2BjMcpkfeDxstC8vO5NImCF61b8lkZjExImtiXkq0-zxMBU2w",
+            "expiration": "Tue, 25 Jul 2023 18:25:22 +0000",
+            "creation": "Tue, 25 Jul 2023 17:25:22 +0000",
+            "lastActive": "Tue, 25 Jul 2023 17:25:22 +0000"
+        }
+    },
+    "toCreate": [],
+    "windowStart": "Tue, 25 Jul 2023 17:21:33 +0000",
+    "maxInUseSessions": 4,
+    "maintainTime": "Tue, 25 Jul 2023 17:23:59 +0000"
+}
+2. Total Sessions Count: 3
+3. Expired Sessions Pos: 0
+4. Soon to expire Sessions Pos: 0
+5. Fresh Sessions Pos: -1
+6. Soon to expire sessions count: 0
+7. Soon to expire sessions count (minus maintained sessions count): 0
+
+####
+1. Call count 2 at Tue, 25 Jul 2023 17:33:42 +0000
+#### Sessions
+
+{
+    "queue": [],
+    "inUse": {
+        "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq4WPgCIZa6O2qFH2T_Y4zPDbnIp7qKZsp_pzHhid7n7c7CDv0_FRwClYA": {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq4WPgCIZa6O2qFH2T_Y4zPDbnIp7qKZsp_pzHhid7n7c7CDv0_FRwClYA",
+            "expiration": "Tue, 25 Jul 2023 18:21:41 +0000",
+            "creation": "Tue, 25 Jul 2023 17:21:33 +0000",
+            "lastActive": "Tue, 25 Jul 2023 17:22:55 +0000"
+        },
+        "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq79KO07RfjfFAuuo61RoocVV7NbYWCTUgjqcG7UvP2GpEMnr_iFTmqGkQ": {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq79KO07RfjfFAuuo61RoocVV7NbYWCTUgjqcG7UvP2GpEMnr_iFTmqGkQ",
+            "expiration": "Tue, 25 Jul 2023 18:23:42 +0000",
+            "creation": "Tue, 25 Jul 2023 17:23:42 +0000",
+            "lastActive": "Tue, 25 Jul 2023 17:23:42 +0000"
+        },
+        "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq5IpiRVO2BjMcpkfeDxstC8vO5NImCF61b8lkZjExImtiXkq0-zxMBU2w": {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq5IpiRVO2BjMcpkfeDxstC8vO5NImCF61b8lkZjExImtiXkq0-zxMBU2w",
+            "expiration": "Tue, 25 Jul 2023 18:25:22 +0000",
+            "creation": "Tue, 25 Jul 2023 17:25:22 +0000",
+            "lastActive": "Tue, 25 Jul 2023 17:25:22 +0000"
+        }
+    },
+    "toCreate": [],
+    "windowStart": "Tue, 25 Jul 2023 17:21:33 +0000",
+    "maxInUseSessions": 4,
+    "maintainTime": "Tue, 25 Jul 2023 17:25:22 +0000"
+}
+2. Total Sessions Count: 3
+3. Expired Sessions Pos: 0
+4. Soon to expire Sessions Pos: 0
+5. Fresh Sessions Pos: -1
+6. Soon to expire sessions count: 0
+7. Soon to expire sessions count (minus maintained sessions count): 0
+
+
+####
+1. Call count 3 at Tue, 25 Jul 2023 17:42:02 +0000
+#### Sessions
+
+{
+    "queue": [],
+    "inUse": {
+        "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq4WPgCIZa6O2qFH2T_Y4zPDbnIp7qKZsp_pzHhid7n7c7CDv0_FRwClYA": {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq4WPgCIZa6O2qFH2T_Y4zPDbnIp7qKZsp_pzHhid7n7c7CDv0_FRwClYA",
+            "expiration": "Tue, 25 Jul 2023 18:21:41 +0000",
+            "creation": "Tue, 25 Jul 2023 17:21:33 +0000",
+            "lastActive": "Tue, 25 Jul 2023 17:22:55 +0000"
+        },
+        "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq79KO07RfjfFAuuo61RoocVV7NbYWCTUgjqcG7UvP2GpEMnr_iFTmqGkQ": {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq79KO07RfjfFAuuo61RoocVV7NbYWCTUgjqcG7UvP2GpEMnr_iFTmqGkQ",
+            "expiration": "Tue, 25 Jul 2023 18:23:42 +0000",
+            "creation": "Tue, 25 Jul 2023 17:23:42 +0000",
+            "lastActive": "Tue, 25 Jul 2023 17:23:42 +0000"
+        },
+        "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq5IpiRVO2BjMcpkfeDxstC8vO5NImCF61b8lkZjExImtiXkq0-zxMBU2w": {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq5IpiRVO2BjMcpkfeDxstC8vO5NImCF61b8lkZjExImtiXkq0-zxMBU2w",
+            "expiration": "Tue, 25 Jul 2023 18:25:22 +0000",
+            "creation": "Tue, 25 Jul 2023 17:25:22 +0000",
+            "lastActive": "Tue, 25 Jul 2023 17:25:22 +0000"
+        }
+    },
+    "toCreate": [],
+    "windowStart": "Tue, 25 Jul 2023 17:21:33 +0000",
+    "maxInUseSessions": 4,
+    "maintainTime": "Tue, 25 Jul 2023 17:33:42 +0000"
+}
+2. Total Sessions Count: 3
+3. Expired Sessions Pos: 0
+4. Soon to expire Sessions Pos: 0
+5. Fresh Sessions Pos: -1
+6. Soon to expire sessions count: 0
+7. Soon to expire sessions count (minus maintained sessions count): 0
+
+####
+1. Call count 4 at Tue, 25 Jul 2023 17:50:22 +0000
+#### Sessions
+
+{
+    "queue": [
+        {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq4WPgCIZa6O2qFH2T_Y4zPDbnIp7qKZsp_pzHhid7n7c7CDv0_FRwClYA",
+            "expiration": "Tue, 25 Jul 2023 18:21:41 +0000",
+            "creation": "Tue, 25 Jul 2023 17:21:33 +0000"
+        },
+        {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq79KO07RfjfFAuuo61RoocVV7NbYWCTUgjqcG7UvP2GpEMnr_iFTmqGkQ",
+            "expiration": "Tue, 25 Jul 2023 18:23:42 +0000",
+            "creation": "Tue, 25 Jul 2023 17:23:42 +0000"
+        },
+        {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq5IpiRVO2BjMcpkfeDxstC8vO5NImCF61b8lkZjExImtiXkq0-zxMBU2w",
+            "expiration": "Tue, 25 Jul 2023 18:25:22 +0000",
+            "creation": "Tue, 25 Jul 2023 17:25:22 +0000"
+        }
+    ],
+    "inUse": [],
+    "toCreate": [],
+    "windowStart": "Tue, 25 Jul 2023 17:21:33 +0000",
+    "maxInUseSessions": 4,
+    "maintainTime": "Tue, 25 Jul 2023 17:42:02 +0000"
+}
+2. Total Sessions Count: 3
+3. Expired Sessions Pos: 0
+4. Soon to expire Sessions Pos: 0
+5. Fresh Sessions Pos: 2
+6. Soon to expire sessions count: 0
+7. Soon to expire sessions count (minus maintained sessions count): 0
+
+####
+1. Call count 5 at Tue, 25 Jul 2023 17:58:42 +0000
+#### Sessions
+
+{
+    "queue": [
+        {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq4WPgCIZa6O2qFH2T_Y4zPDbnIp7qKZsp_pzHhid7n7c7CDv0_FRwClYA",
+            "expiration": "Tue, 25 Jul 2023 18:21:41 +0000",
+            "creation": "Tue, 25 Jul 2023 17:21:33 +0000"
+        },
+        {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq79KO07RfjfFAuuo61RoocVV7NbYWCTUgjqcG7UvP2GpEMnr_iFTmqGkQ",
+            "expiration": "Tue, 25 Jul 2023 18:23:42 +0000",
+            "creation": "Tue, 25 Jul 2023 17:23:42 +0000"
+        },
+        {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq5IpiRVO2BjMcpkfeDxstC8vO5NImCF61b8lkZjExImtiXkq0-zxMBU2w",
+            "expiration": "Tue, 25 Jul 2023 18:25:22 +0000",
+            "creation": "Tue, 25 Jul 2023 17:25:22 +0000"
+        }
+    ],
+    "inUse": [],
+    "toCreate": [],
+    "windowStart": "Tue, 25 Jul 2023 17:21:33 +0000",
+    "maxInUseSessions": 4,
+    "maintainTime": "Tue, 25 Jul 2023 17:50:22 +0000"
+}
+2. Total Sessions Count: 3
+3. Expired Sessions Pos: 0
+4. Soon to expire Sessions Pos: 0
+5. Fresh Sessions Pos: 2
+6. Soon to expire sessions count: 0
+7. Soon to expire sessions count (minus maintained sessions count): 0
+
+####
+1. Call count 6 at Tue, 25 Jul 2023 18:07:02 +0000
+#### Sessions
+
+{
+    "queue": [
+        {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq4WPgCIZa6O2qFH2T_Y4zPDbnIp7qKZsp_pzHhid7n7c7CDv0_FRwClYA",
+            "expiration": "Tue, 25 Jul 2023 18:21:41 +0000",
+            "creation": "Tue, 25 Jul 2023 17:21:33 +0000"
+        },
+        {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq79KO07RfjfFAuuo61RoocVV7NbYWCTUgjqcG7UvP2GpEMnr_iFTmqGkQ",
+            "expiration": "Tue, 25 Jul 2023 18:23:42 +0000",
+            "creation": "Tue, 25 Jul 2023 17:23:42 +0000"
+        },
+        {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq5IpiRVO2BjMcpkfeDxstC8vO5NImCF61b8lkZjExImtiXkq0-zxMBU2w",
+            "expiration": "Tue, 25 Jul 2023 18:25:22 +0000",
+            "creation": "Tue, 25 Jul 2023 17:25:22 +0000"
+        }
+    ],
+    "inUse": [],
+    "toCreate": [],
+    "windowStart": "Tue, 25 Jul 2023 17:21:33 +0000",
+    "maxInUseSessions": 4,
+    "maintainTime": "Tue, 25 Jul 2023 17:58:42 +0000"
+}
+2. Total Sessions Count: 3
+3. Expired Sessions Pos: 0
+4. Soon to expire Sessions Pos: 0
+5. Fresh Sessions Pos: 2
+6. Soon to expire sessions count: 0
+7. Soon to expire sessions count (minus maintained sessions count): 0
+
+####
+1. Call count 7 at Tue, 25 Jul 2023 18:15:22 +0000
+#### Sessions
+
+{
+    "queue": [
+        {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq4WPgCIZa6O2qFH2T_Y4zPDbnIp7qKZsp_pzHhid7n7c7CDv0_FRwClYA",
+            "expiration": "Tue, 25 Jul 2023 18:21:41 +0000",
+            "creation": "Tue, 25 Jul 2023 17:21:33 +0000"
+        },
+        {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq79KO07RfjfFAuuo61RoocVV7NbYWCTUgjqcG7UvP2GpEMnr_iFTmqGkQ",
+            "expiration": "Tue, 25 Jul 2023 18:23:42 +0000",
+            "creation": "Tue, 25 Jul 2023 17:23:42 +0000"
+        },
+        {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq5IpiRVO2BjMcpkfeDxstC8vO5NImCF61b8lkZjExImtiXkq0-zxMBU2w",
+            "expiration": "Tue, 25 Jul 2023 18:25:22 +0000",
+            "creation": "Tue, 25 Jul 2023 17:25:22 +0000"
+        }
+    ],
+    "inUse": [],
+    "toCreate": [],
+    "windowStart": "Tue, 25 Jul 2023 17:21:33 +0000",
+    "maxInUseSessions": 4,
+    "maintainTime": "Tue, 25 Jul 2023 18:07:02 +0000"
+}
+2. Total Sessions Count: 3
+3. Expired Sessions Pos: 0
+4. Soon to expire Sessions Pos: 3
+5. Fresh Sessions Pos: 2
+6. Soon to expire sessions count: 3
+7. Soon to expire sessions count (minus maintained sessions count): 1
+8. Refreshed old session
+
+####
+1. Call count 8 at Tue, 25 Jul 2023 18:23:42 +0000
+#### Sessions
+
+{
+    "queue": [
+        {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq4WPgCIZa6O2qFH2T_Y4zPDbnIp7qKZsp_pzHhid7n7c7CDv0_FRwClYA",
+            "expiration": "Tue, 25 Jul 2023 19:15:22 +0000",
+            "creation": "Tue, 25 Jul 2023 17:21:33 +0000"
+        },
+        {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq79KO07RfjfFAuuo61RoocVV7NbYWCTUgjqcG7UvP2GpEMnr_iFTmqGkQ",
+            "expiration": "Tue, 25 Jul 2023 18:23:42 +0000",
+            "creation": "Tue, 25 Jul 2023 17:23:42 +0000"
+        },
+        {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq5IpiRVO2BjMcpkfeDxstC8vO5NImCF61b8lkZjExImtiXkq0-zxMBU2w",
+            "expiration": "Tue, 25 Jul 2023 18:25:22 +0000",
+            "creation": "Tue, 25 Jul 2023 17:25:22 +0000"
+        }
+    ],
+    "inUse": [],
+    "toCreate": [],
+    "windowStart": "Tue, 25 Jul 2023 17:21:33 +0000",
+    "maxInUseSessions": 4,
+    "maintainTime": "Tue, 25 Jul 2023 18:15:22 +0000"
+}
+2. Total Sessions Count: 3
+3. Expired Sessions Pos: 1
+4. Soon to expire Sessions Pos: 2
+5. Fresh Sessions Pos: 2
+6. Soon to expire sessions count: 1
+7. Soon to expire sessions count (minus maintained sessions count): 0
+
+####
+1. Call count 9 at Tue, 25 Jul 2023 18:32:02 +0000
+#### Sessions
+
+{
+    "queue": [
+        {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq4WPgCIZa6O2qFH2T_Y4zPDbnIp7qKZsp_pzHhid7n7c7CDv0_FRwClYA",
+            "expiration": "Tue, 25 Jul 2023 19:15:22 +0000",
+            "creation": "Tue, 25 Jul 2023 17:21:33 +0000"
+        },
+        {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq5IpiRVO2BjMcpkfeDxstC8vO5NImCF61b8lkZjExImtiXkq0-zxMBU2w",
+            "expiration": "Tue, 25 Jul 2023 18:25:22 +0000",
+            "creation": "Tue, 25 Jul 2023 17:25:22 +0000"
+        }
+    ],
+    "inUse": [],
+    "toCreate": [],
+    "windowStart": "Tue, 25 Jul 2023 17:21:33 +0000",
+    "maxInUseSessions": 4,
+    "maintainTime": "Tue, 25 Jul 2023 18:23:42 +0000"
+}
+2. Total Sessions Count: 2
+3. Expired Sessions Pos: 1
+4. Soon to expire Sessions Pos: 1
+5. Fresh Sessions Pos: 1
+6. Soon to expire sessions count: 0
+7. Soon to expire sessions count (minus maintained sessions count): 0
+
+####
+1. Call count 10 at Tue, 25 Jul 2023 18:40:22 +0000
+#### Sessions
+
+{
+    "queue": [
+        {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq4WPgCIZa6O2qFH2T_Y4zPDbnIp7qKZsp_pzHhid7n7c7CDv0_FRwClYA",
+            "expiration": "Tue, 25 Jul 2023 19:15:22 +0000",
+            "creation": "Tue, 25 Jul 2023 17:21:33 +0000"
+        }
+    ],
+    "inUse": [],
+    "toCreate": [],
+    "windowStart": "Tue, 25 Jul 2023 17:21:33 +0000",
+    "maxInUseSessions": 4,
+    "maintainTime": "Tue, 25 Jul 2023 18:32:02 +0000"
+}
+2. Total Sessions Count: 1
+3. Expired Sessions Pos: 0
+4. Soon to expire Sessions Pos: 0
+5. Fresh Sessions Pos: 0
+6. Soon to expire sessions count: 0
+7. Soon to expire sessions count (minus maintained sessions count): 0
+
+####
+1. Call count 11 at Tue, 25 Jul 2023 18:48:42 +0000
+#### Sessions
+
+{
+    "queue": [
+        {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq4WPgCIZa6O2qFH2T_Y4zPDbnIp7qKZsp_pzHhid7n7c7CDv0_FRwClYA",
+            "expiration": "Tue, 25 Jul 2023 19:15:22 +0000",
+            "creation": "Tue, 25 Jul 2023 17:21:33 +0000"
+        }
+    ],
+    "inUse": [],
+    "toCreate": [],
+    "windowStart": "Tue, 25 Jul 2023 17:21:33 +0000",
+    "maxInUseSessions": 4,
+    "maintainTime": "Tue, 25 Jul 2023 18:40:22 +0000"
+}
+2. Total Sessions Count: 1
+3. Expired Sessions Pos: 0
+4. Soon to expire Sessions Pos: 0
+5. Fresh Sessions Pos: 0
+6. Soon to expire sessions count: 0
+7. Soon to expire sessions count (minus maintained sessions count): 0
+
+####
+1. Call count 12 at Tue, 25 Jul 2023 18:57:02 +0000
+#### Sessions
+
+{
+    "queue": [
+        {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq4WPgCIZa6O2qFH2T_Y4zPDbnIp7qKZsp_pzHhid7n7c7CDv0_FRwClYA",
+            "expiration": "Tue, 25 Jul 2023 19:15:22 +0000",
+            "creation": "Tue, 25 Jul 2023 17:21:33 +0000"
+        }
+    ],
+    "inUse": [],
+    "toCreate": [],
+    "windowStart": "Tue, 25 Jul 2023 17:21:33 +0000",
+    "maxInUseSessions": 4,
+    "maintainTime": "Tue, 25 Jul 2023 18:48:42 +0000"
+}
+2. Total Sessions Count: 1
+3. Expired Sessions Pos: 0
+4. Soon to expire Sessions Pos: 0
+5. Fresh Sessions Pos: 0
+6. Soon to expire sessions count: 0
+7. Soon to expire sessions count (minus maintained sessions count): 0
+
+####
+1. Call count 13 at Tue, 25 Jul 2023 19:05:22 +0000
+#### Sessions
+
+{
+    "queue": [
+        {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq4WPgCIZa6O2qFH2T_Y4zPDbnIp7qKZsp_pzHhid7n7c7CDv0_FRwClYA",
+            "expiration": "Tue, 25 Jul 2023 19:15:22 +0000",
+            "creation": "Tue, 25 Jul 2023 17:21:33 +0000"
+        }
+    ],
+    "inUse": [],
+    "toCreate": [],
+    "windowStart": "Tue, 25 Jul 2023 17:21:33 +0000",
+    "maxInUseSessions": 4,
+    "maintainTime": "Tue, 25 Jul 2023 18:57:02 +0000"
+}
+2. Total Sessions Count: 1
+3. Expired Sessions Pos: 0
+4. Soon to expire Sessions Pos: 1
+5. Fresh Sessions Pos: 0
+6. Soon to expire sessions count: 1
+7. Soon to expire sessions count (minus maintained sessions count): 1
+8. Refreshed old session
+
+####
+1. Call count 14 at Tue, 25 Jul 2023 19:13:43 +0000
+#### Sessions
+
+{
+    "queue": [
+        {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq4WPgCIZa6O2qFH2T_Y4zPDbnIp7qKZsp_pzHhid7n7c7CDv0_FRwClYA",
+            "expiration": "Tue, 25 Jul 2023 20:05:22 +0000",
+            "creation": "Tue, 25 Jul 2023 17:21:33 +0000"
+        }
+    ],
+    "inUse": [],
+    "toCreate": [],
+    "windowStart": "Tue, 25 Jul 2023 17:21:33 +0000",
+    "maxInUseSessions": 4,
+    "maintainTime": "Tue, 25 Jul 2023 19:05:23 +0000"
+}
+2. Total Sessions Count: 1
+3. Expired Sessions Pos: 0
+4. Soon to expire Sessions Pos: 0
+5. Fresh Sessions Pos: 0
+6. Soon to expire sessions count: 0
+7. Soon to expire sessions count (minus maintained sessions count): 0
+
+####
+1. Call count 15 at Tue, 25 Jul 2023 19:22:03 +0000
+#### Sessions
+
+{
+    "queue": [
+        {
+            "name": "projects\/the-book-club-337319\/instances\/google-cloud-php-system-tests\/databases\/gcloud_testing_64934c046119e\/sessions\/AH67Lq4WPgCIZa6O2qFH2T_Y4zPDbnIp7qKZsp_pzHhid7n7c7CDv0_FRwClYA",
+            "expiration": "Tue, 25 Jul 2023 20:05:22 +0000",
+            "creation": "Tue, 25 Jul 2023 17:21:33 +0000"
+        }
+    ],
+    "inUse": [],
+    "toCreate": [],
+    "windowStart": "Tue, 25 Jul 2023 17:21:33 +0000",
+    "maxInUseSessions": 4,
+    "maintainTime": "Tue, 25 Jul 2023 19:13:43 +0000"
+}
+2. Total Sessions Count: 1
+3. Expired Sessions Pos: 0
+4. Soon to expire Sessions Pos: 0
+5. Fresh Sessions Pos: 0
+6. Soon to expire sessions count: 0
+7. Soon to expire sessions count (minus maintained sessions count): 0
+Program executed successfully in 7502284.026123 milliseconds
+➜  Spanner git:(main) ✗
+➜  Spanner git:(main) ✗

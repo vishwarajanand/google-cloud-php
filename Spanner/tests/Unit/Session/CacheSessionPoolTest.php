@@ -233,6 +233,7 @@ class CacheSessionPoolTest extends TestCase
                     'name' => 'session',
                     'expiration' => $this->time + 3600,
                     'creation' => $this->time,
+                    'lastActive' => $this->time,
                 ]
             ],
             'inUse' => [],
@@ -944,6 +945,7 @@ class CacheSessionPoolTest extends TestCase
             'name' => basename($name),
             'expiration' => $this->time + 3600 - $age,
             'creation' => $this->time,
+            'lastActive' => $this->time,
         ];
     }
 
@@ -974,8 +976,8 @@ class CacheSessionPoolTest extends TestCase
     public function testMaintainData()
     {
         $initialData = $this->cacheData(['foo' => 3500], 300);
-        $initialData['inUse'] = [2, 7, 1];
-        $initialData['toCreate'] = [3, 1, 4];
+        $initialData['inUse'] = $this->queue([2, 7, 1]);
+        $initialData['toCreate'] = $this->queue([3, 1, 4]);
         $config = ['minSessions' => 4];
         $cache = $this->getCacheItemPool($initialData);
         $pool = new CacheSessionPoolStub($cache, $config, $this->time);

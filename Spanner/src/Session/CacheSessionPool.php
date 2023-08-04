@@ -176,6 +176,11 @@ class CacheSessionPool implements SessionPoolInterface
     private $deleteQueue = [];
 
     /**
+     * @var int
+     */
+    private $maintainCallCount = 0;
+
+    /**
      * @param CacheItemPoolInterface $cacheItemPool A PSR-6 compatible cache
      *        implementation used to store the session data.
      * @param array $config [optional] {
@@ -218,6 +223,7 @@ class CacheSessionPool implements SessionPoolInterface
         $this->cacheItemPool = $cacheItemPool;
         $this->config = $config + self::$defaultConfig;
         $this->validateConfig();
+        $this->maintainCallCount = 0;
     }
 
     /**
@@ -353,13 +359,16 @@ class CacheSessionPool implements SessionPoolInterface
             if (isset($data['inUse'][$name])) {
                 // set creation time to an expired time if no value is found
                 $creationTime = $data['inUse'][$name]['creation']
-                    ?? $this->time() - self::DURATION_SESSION_LIFETIME;
+                ?? $this->time() - self::DURATION_SESSION_LIFETIME;
+                $lastActiveTime = $data['inUse'][$name]['lastActive']
+                    ?? $creationTime;
                 unset($data['inUse'][$name]);
                 array_push($data['queue'], [
                     'name' => $name,
                     'expiration' => $session->expiration()
                         ?: $this->time() + SessionPoolInterface::SESSION_EXPIRATION_SECONDS,
                     'creation' => $creationTime,
+                    'lastActive' => $lastActiveTime,
                 ]);
                 $this->save($item->set($data));
             }
@@ -588,8 +597,6 @@ class CacheSessionPool implements SessionPoolInterface
     private function purgeOrphanedToCreateItems(array &$data)
     {
         foreach ($data['toCreate'] as $key => $timestamp) {
-            $time = $this->time();
-
             if ($timestamp + self::DURATION_TWENTY_MINUTES < $this->time()) {
                 unset($data['toCreate'][$key]);
             }
@@ -642,11 +649,35 @@ class CacheSessionPool implements SessionPoolInterface
      */
     private function getSessionCount(array $data)
     {
+        echo "#### Sessions".PHP_EOL;
+        $sessions = [...$data];
+        $this->formatSessions($sessions);
+        echo json_encode($sessions, JSON_PRETTY_PRINT).PHP_EOL;
         return count($data['queue'])
             + count($data['inUse'])
             + count($data['toCreate']);
     }
 
+    private function formatSessions(array &$sessions)
+    {
+        foreach ($sessions as $k => $v) {
+            if (is_array($v)) {
+                // echo str_repeat(" ", $depth*2)."'{$k}':";
+                $this->formatSessions($sessions[$k]);
+            }
+
+            if (in_array($k, [
+                'windowStart',
+                'maintainTime',
+                'expiration',
+                'creation',
+                'lastActive',
+                ])
+            ) {
+                $sessions[$k] = date('r', $v);
+            }
+        }
+    }
     /**
      * Gets the next session in the queue, clearing out any which are expired.
      *
@@ -707,6 +738,7 @@ class CacheSessionPool implements SessionPoolInterface
                     'name' => $result['name'],
                     'expiration' => $this->time() + SessionPoolInterface::SESSION_EXPIRATION_SECONDS,
                     'creation' => $this->time(),
+                    'lastActive' => $this->time(),
                 ];
 
                 $created++;
@@ -942,6 +974,11 @@ class CacheSessionPool implements SessionPoolInterface
      */
     public function maintain()
     {
+        $this->maintainCallCount++;
+        echo PHP_EOL."#### ".PHP_EOL;
+        $maintainTime = date('r', time());
+        echo "1. Call count {$this->maintainCallCount} at {$maintainTime}".PHP_EOL;
+
         if (!isset($this->database)) {
             throw new \LogicException('Cannot maintain session pool: database not set.');
         }
@@ -950,9 +987,13 @@ class CacheSessionPool implements SessionPoolInterface
             $cacheItem = $this->cacheItemPool->getItem($this->cacheKey);
             $cachedData = $cacheItem->get();
             if (!$cachedData) {
+                echo "2.1. No Cached Data".PHP_EOL;
                 return;
             }
-
+            // Todo: consider purging in-use sessions
+            $this->purgeOrphanedInUseSessions($cachedData);
+            $x = $this->getSessionCount($cachedData);
+            echo "2. Total Sessions Count: {$x}".PHP_EOL;
             $sessions = $cachedData['queue'];
             foreach ($sessions as $id => $session) {
                 if (self::DURATION_SESSION_LIFETIME + $session['creation'] <
@@ -980,12 +1021,14 @@ class CacheSessionPool implements SessionPoolInterface
                     break;
                 }
             }
+            echo "3. Expired Sessions Pos: {$expiredPos}".PHP_EOL;
             // Find sessions that will expire in next 10 minutes ("old" sessions).
             for ($soonToExpirePos = $expiredPos; $soonToExpirePos < $len; $soonToExpirePos++) {
                 if ($sessions[$soonToExpirePos]['expiration'] > $soonToExpireThreshold) {
                     break;
                 }
             }
+            echo "4. Soon to expire Sessions Pos: {$soonToExpirePos}".PHP_EOL;
             // Find sessions that were refreshed after the previous maintenance ("fresh" sessions).
             $freshPos = $len - 1;
             if (isset($prevMaintainTime)) {
@@ -996,8 +1039,11 @@ class CacheSessionPool implements SessionPoolInterface
                     }
                 }
             }
+            echo "5. Fresh Sessions Pos: {$freshPos}".PHP_EOL;
             $freshSessionsCount = $len - 1 - $freshPos;
             $soonToExpireSessions = array_splice($sessions, $expiredPos, ($soonToExpirePos - $expiredPos));
+            $x = count($soonToExpireSessions);
+            echo "6. Soon to expire sessions count: {$x}".PHP_EOL;
             // Drop expired sessions.
             array_splice($sessions, 0, $expiredPos);
             // Sessions created at peak load and (probably) not needed anymore.
@@ -1010,6 +1056,8 @@ class CacheSessionPool implements SessionPoolInterface
                 // Treat some "old" sessions as extra sessions (do not refresh them).
                 $extraSessions = array_splice($soonToExpireSessions, -$extraSessionsCount);
             }
+            $x = count($soonToExpireSessions);
+            echo "7. Soon to expire sessions count (minus maintained sessions count): {$x}".PHP_EOL;
 
             // Refresh remaining "old" sessions and move them to the end of the queue.
             foreach ($soonToExpireSessions as $item) {
@@ -1019,10 +1067,13 @@ class CacheSessionPool implements SessionPoolInterface
                         'name' => $item['name'],
                         'expiration' => $session->expiration(),
                         'creation' => $item['creation'],
+                        'lastActive' => $this->time(),
                     ];
                     $freshSessionsCount++;
+                    echo "8. Refreshed old session".PHP_EOL;
                 } else {
                     $totalSessionsCount--;
+                    echo "9. Refreshing old session failed.".PHP_EOL;
                 }
             }
 
@@ -1043,19 +1094,26 @@ class CacheSessionPool implements SessionPoolInterface
                 if ($refreshCount > 0) {
                     // Refresh some "oldest" sessions and move them to the end of the queue.
                     $refreshCount = min($refreshCount, count($sessions));
+                    echo "10.1. Refreshing sessions in a loop, refreshCount: {$refreshCount}".PHP_EOL;
                     for ($pos = 0; $pos < $refreshCount; $pos++) {
                         $item = $sessions[$pos];
                         $session = $this->database->session($item['name']);
                         if ($this->refreshSession($session)) {
+                            echo "11.1. Refreshing sessions count".PHP_EOL;
                             $sessions[] = [
                                 'name' => $item['name'],
                                 'expiration' => $session->expiration(),
                                 'creation' => $item['creation'],
+                                'lastActive' => $this->time(),
                             ];
+                        } else {
+                            echo "11.2. Refreshing session failed.".PHP_EOL;
                         }
                     }
                     array_splice($sessions, 0, $refreshCount);
                 }
+            } else {
+                echo "10. prevMaintainTime is not set, its equal to {$prevMaintainTime}.".PHP_EOL;
             }
 
             $cachedData['maintainTime'] = $this->time();
