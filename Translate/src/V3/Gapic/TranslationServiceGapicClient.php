@@ -78,7 +78,7 @@ use Google\LongRunning\Operation;
  *     $operationResponse->pollUntilComplete();
  *     if ($operationResponse->operationSucceeded()) {
  *         $result = $operationResponse->getResult();
- *         // doSomethingWith($result)
+ *     // doSomethingWith($result)
  *     } else {
  *         $error = $operationResponse->getError();
  *         // handleError($error)
@@ -95,7 +95,7 @@ use Google\LongRunning\Operation;
  *     }
  *     if ($newOperationResponse->operationSucceeded()) {
  *         $result = $newOperationResponse->getResult();
- *         // doSomethingWith($result)
+ *     // doSomethingWith($result)
  *     } else {
  *         $error = $newOperationResponse->getError();
  *         // handleError($error)
@@ -383,7 +383,7 @@ class TranslationServiceGapicClient
      *     $operationResponse->pollUntilComplete();
      *     if ($operationResponse->operationSucceeded()) {
      *         $result = $operationResponse->getResult();
-     *         // doSomethingWith($result)
+     *     // doSomethingWith($result)
      *     } else {
      *         $error = $operationResponse->getError();
      *         // handleError($error)
@@ -400,7 +400,7 @@ class TranslationServiceGapicClient
      *     }
      *     if ($newOperationResponse->operationSucceeded()) {
      *         $result = $newOperationResponse->getResult();
-     *         // doSomethingWith($result)
+     *     // doSomethingWith($result)
      *     } else {
      *         $error = $newOperationResponse->getError();
      *         // handleError($error)
@@ -468,6 +468,13 @@ class TranslationServiceGapicClient
      *           If not provided, the default is `Machine Translated by Google`.
      *           Customized attribution should follow rules in
      *           https://cloud.google.com/translate/attribution#attribution_and_logos
+     *     @type bool $enableShadowRemovalNativePdf
+     *           Optional. If true, use the text removal server to remove the shadow text on
+     *           background image for native pdf translation.
+     *           Shadow removal feature can only be enabled when
+     *           is_translate_native_pdf_only: false && pdf_native_only: false
+     *     @type bool $enableRotationCorrection
+     *           Optional. If true, enable auto rotation correction in DVS.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
      *           associative array of retry settings parameters. See the documentation on
@@ -504,6 +511,14 @@ class TranslationServiceGapicClient
             $request->setCustomizedAttribution($optionalArgs['customizedAttribution']);
         }
 
+        if (isset($optionalArgs['enableShadowRemovalNativePdf'])) {
+            $request->setEnableShadowRemovalNativePdf($optionalArgs['enableShadowRemovalNativePdf']);
+        }
+
+        if (isset($optionalArgs['enableRotationCorrection'])) {
+            $request->setEnableRotationCorrection($optionalArgs['enableRotationCorrection']);
+        }
+
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startOperationsCall('BatchTranslateDocument', $optionalArgs, $request, $this->getOperationsClient())->wait();
@@ -531,7 +546,7 @@ class TranslationServiceGapicClient
      *     $operationResponse->pollUntilComplete();
      *     if ($operationResponse->operationSucceeded()) {
      *         $result = $operationResponse->getResult();
-     *         // doSomethingWith($result)
+     *     // doSomethingWith($result)
      *     } else {
      *         $error = $operationResponse->getError();
      *         // handleError($error)
@@ -548,7 +563,7 @@ class TranslationServiceGapicClient
      *     }
      *     if ($newOperationResponse->operationSucceeded()) {
      *         $result = $newOperationResponse->getResult();
-     *         // doSomethingWith($result)
+     *     // doSomethingWith($result)
      *     } else {
      *         $error = $newOperationResponse->getError();
      *         // handleError($error)
@@ -659,7 +674,7 @@ class TranslationServiceGapicClient
      *     $operationResponse->pollUntilComplete();
      *     if ($operationResponse->operationSucceeded()) {
      *         $result = $operationResponse->getResult();
-     *         // doSomethingWith($result)
+     *     // doSomethingWith($result)
      *     } else {
      *         $error = $operationResponse->getError();
      *         // handleError($error)
@@ -676,7 +691,7 @@ class TranslationServiceGapicClient
      *     }
      *     if ($newOperationResponse->operationSucceeded()) {
      *         $result = $newOperationResponse->getResult();
-     *         // doSomethingWith($result)
+     *     // doSomethingWith($result)
      *     } else {
      *         $error = $newOperationResponse->getError();
      *         // handleError($error)
@@ -727,7 +742,7 @@ class TranslationServiceGapicClient
      *     $operationResponse->pollUntilComplete();
      *     if ($operationResponse->operationSucceeded()) {
      *         $result = $operationResponse->getResult();
-     *         // doSomethingWith($result)
+     *     // doSomethingWith($result)
      *     } else {
      *         $error = $operationResponse->getError();
      *         // handleError($error)
@@ -744,7 +759,7 @@ class TranslationServiceGapicClient
      *     }
      *     if ($newOperationResponse->operationSucceeded()) {
      *         $result = $newOperationResponse->getResult();
-     *         // doSomethingWith($result)
+     *     // doSomethingWith($result)
      *     } else {
      *         $error = $newOperationResponse->getError();
      *         // handleError($error)
@@ -1157,13 +1172,16 @@ class TranslationServiceGapicClient
      *           Customized attribution should follow rules in
      *           https://cloud.google.com/translate/attribution#attribution_and_logos
      *     @type bool $isTranslateNativePdfOnly
-     *           Optional. If true, the page limit of online native pdf translation is 300
-     *           and only native pdf pages will be translated.
+     *           Optional. is_translate_native_pdf_only field for external customers.
+     *           If true, the page limit of online native pdf translation is 300 and only
+     *           native pdf pages will be translated.
      *     @type bool $enableShadowRemovalNativePdf
-     *           Optional. If true, use the text removal to remove the shadow text on
+     *           Optional. If true, use the text removal server to remove the shadow text on
      *           background image for native pdf translation.
      *           Shadow removal feature can only be enabled when
-     *           is_translate_native_pdf_only is false
+     *           is_translate_native_pdf_only: false && pdf_native_only: false
+     *     @type bool $enableRotationCorrection
+     *           Optional. If true, enable auto rotation correction in DVS.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
      *           associative array of retry settings parameters. See the documentation on
@@ -1212,6 +1230,10 @@ class TranslationServiceGapicClient
 
         if (isset($optionalArgs['enableShadowRemovalNativePdf'])) {
             $request->setEnableShadowRemovalNativePdf($optionalArgs['enableShadowRemovalNativePdf']);
+        }
+
+        if (isset($optionalArgs['enableRotationCorrection'])) {
+            $request->setEnableRotationCorrection($optionalArgs['enableRotationCorrection']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
@@ -1282,7 +1304,7 @@ class TranslationServiceGapicClient
      *           For example,
      *           `projects/{project-number-or-id}/locations/global/models/general/nmt`.
      *
-     *           If not provided, the default Google model (NMT) will be used.
+     *           If not provided, the default Google model (NMT) will be used
      *     @type TranslateTextGlossaryConfig $glossaryConfig
      *           Optional. Glossary to be applied. The glossary must be
      *           within the same region (have the same location-id) as the model, otherwise

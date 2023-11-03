@@ -271,6 +271,24 @@ class DatabaseInstance extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string maintenance_version = 42;</code>
      */
     private $maintenance_version = '';
+    /**
+     * Output only. The link to service attachment of PSC instance.
+     *
+     * Generated from protobuf field <code>optional string psc_service_attachment_link = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private $psc_service_attachment_link = null;
+    /**
+     * Output only. The dns name of the instance.
+     *
+     * Generated from protobuf field <code>optional string dns_name = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private $dns_name = null;
+    /**
+     * Output only. The dns name of the primary instance in a replication group.
+     *
+     * Generated from protobuf field <code>optional string primary_dns_name = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private $primary_dns_name = null;
 
     /**
      * Constructor.
@@ -387,6 +405,12 @@ class DatabaseInstance extends \Google\Protobuf\Internal\Message
      *           Output only. List all maintenance versions applicable on the instance
      *     @type string $maintenance_version
      *           The current software version on the instance.
+     *     @type string $psc_service_attachment_link
+     *           Output only. The link to service attachment of PSC instance.
+     *     @type string $dns_name
+     *           Output only. The dns name of the instance.
+     *     @type string $primary_dns_name
+     *           Output only. The dns name of the primary instance in a replication group.
      * }
      */
     public function __construct($data = NULL) {
@@ -1641,6 +1665,114 @@ class DatabaseInstance extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->maintenance_version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The link to service attachment of PSC instance.
+     *
+     * Generated from protobuf field <code>optional string psc_service_attachment_link = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return string
+     */
+    public function getPscServiceAttachmentLink()
+    {
+        return isset($this->psc_service_attachment_link) ? $this->psc_service_attachment_link : '';
+    }
+
+    public function hasPscServiceAttachmentLink()
+    {
+        return isset($this->psc_service_attachment_link);
+    }
+
+    public function clearPscServiceAttachmentLink()
+    {
+        unset($this->psc_service_attachment_link);
+    }
+
+    /**
+     * Output only. The link to service attachment of PSC instance.
+     *
+     * Generated from protobuf field <code>optional string psc_service_attachment_link = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPscServiceAttachmentLink($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->psc_service_attachment_link = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The dns name of the instance.
+     *
+     * Generated from protobuf field <code>optional string dns_name = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return string
+     */
+    public function getDnsName()
+    {
+        return isset($this->dns_name) ? $this->dns_name : '';
+    }
+
+    public function hasDnsName()
+    {
+        return isset($this->dns_name);
+    }
+
+    public function clearDnsName()
+    {
+        unset($this->dns_name);
+    }
+
+    /**
+     * Output only. The dns name of the instance.
+     *
+     * Generated from protobuf field <code>optional string dns_name = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDnsName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->dns_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The dns name of the primary instance in a replication group.
+     *
+     * Generated from protobuf field <code>optional string primary_dns_name = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return string
+     */
+    public function getPrimaryDnsName()
+    {
+        return isset($this->primary_dns_name) ? $this->primary_dns_name : '';
+    }
+
+    public function hasPrimaryDnsName()
+    {
+        return isset($this->primary_dns_name);
+    }
+
+    public function clearPrimaryDnsName()
+    {
+        unset($this->primary_dns_name);
+    }
+
+    /**
+     * Output only. The dns name of the primary instance in a replication group.
+     *
+     * Generated from protobuf field <code>optional string primary_dns_name = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPrimaryDnsName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->primary_dns_name = $var;
 
         return $this;
     }

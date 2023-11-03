@@ -53,10 +53,20 @@ class InstancePolicy extends \Google\Protobuf\Internal\Message
     /**
      * Non-boot disks to be attached for each VM created by this InstancePolicy.
      * New disks will be deleted when the VM is deleted.
+     * A non-boot disk is a disk that can be of a device with a
+     * file system or a raw storage drive that is not ready for data
+     * storage and accessing.
      *
      * Generated from protobuf field <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
      */
     private $disks;
+    /**
+     * Optional. If specified, VMs will consume only the specified reservation.
+     * If not specified (default), VMs will consume any applicable reservation.
+     *
+     * Generated from protobuf field <code>string reservation = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private $reservation = '';
 
     /**
      * Constructor.
@@ -81,6 +91,12 @@ class InstancePolicy extends \Google\Protobuf\Internal\Message
      *     @type array<\Google\Cloud\Batch\V1\AllocationPolicy\AttachedDisk>|\Google\Protobuf\Internal\RepeatedField $disks
      *           Non-boot disks to be attached for each VM created by this InstancePolicy.
      *           New disks will be deleted when the VM is deleted.
+     *           A non-boot disk is a disk that can be of a device with a
+     *           file system or a raw storage drive that is not ready for data
+     *           storage and accessing.
+     *     @type string $reservation
+     *           Optional. If specified, VMs will consume only the specified reservation.
+     *           If not specified (default), VMs will consume any applicable reservation.
      * }
      */
     public function __construct($data = NULL) {
@@ -239,6 +255,9 @@ class InstancePolicy extends \Google\Protobuf\Internal\Message
     /**
      * Non-boot disks to be attached for each VM created by this InstancePolicy.
      * New disks will be deleted when the VM is deleted.
+     * A non-boot disk is a disk that can be of a device with a
+     * file system or a raw storage drive that is not ready for data
+     * storage and accessing.
      *
      * Generated from protobuf field <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -251,6 +270,9 @@ class InstancePolicy extends \Google\Protobuf\Internal\Message
     /**
      * Non-boot disks to be attached for each VM created by this InstancePolicy.
      * New disks will be deleted when the VM is deleted.
+     * A non-boot disk is a disk that can be of a device with a
+     * file system or a raw storage drive that is not ready for data
+     * storage and accessing.
      *
      * Generated from protobuf field <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
      * @param array<\Google\Cloud\Batch\V1\AllocationPolicy\AttachedDisk>|\Google\Protobuf\Internal\RepeatedField $var
@@ -260,6 +282,34 @@ class InstancePolicy extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Cloud\Batch\V1\AllocationPolicy\AttachedDisk::class);
         $this->disks = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Optional. If specified, VMs will consume only the specified reservation.
+     * If not specified (default), VMs will consume any applicable reservation.
+     *
+     * Generated from protobuf field <code>string reservation = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return string
+     */
+    public function getReservation()
+    {
+        return $this->reservation;
+    }
+
+    /**
+     * Optional. If specified, VMs will consume only the specified reservation.
+     * If not specified (default), VMs will consume any applicable reservation.
+     *
+     * Generated from protobuf field <code>string reservation = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setReservation($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->reservation = $var;
 
         return $this;
     }

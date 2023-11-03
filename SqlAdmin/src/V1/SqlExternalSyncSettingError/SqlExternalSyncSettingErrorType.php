@@ -211,6 +211,19 @@ class SqlExternalSyncSettingErrorType
      * Generated from protobuf enum <code>UNSUPPORTED_DATABASE_SETTINGS = 33;</code>
      */
     const UNSUPPORTED_DATABASE_SETTINGS = 33;
+    /**
+     * The replication user is missing parallel import specific privileges.
+     * (e.g. LOCK TABLES) for MySQL.
+     *
+     * Generated from protobuf enum <code>MYSQL_PARALLEL_IMPORT_INSUFFICIENT_PRIVILEGE = 34;</code>
+     */
+    const MYSQL_PARALLEL_IMPORT_INSUFFICIENT_PRIVILEGE = 34;
+    /**
+     * The global variable local_infile is off on external server replica.
+     *
+     * Generated from protobuf enum <code>LOCAL_INFILE_OFF = 35;</code>
+     */
+    const LOCAL_INFILE_OFF = 35;
 
     private static $valueToName = [
         self::SQL_EXTERNAL_SYNC_SETTING_ERROR_TYPE_UNSPECIFIED => 'SQL_EXTERNAL_SYNC_SETTING_ERROR_TYPE_UNSPECIFIED',
@@ -247,6 +260,8 @@ class SqlExternalSyncSettingErrorType
         self::INSUFFICIENT_GCS_PERMISSIONS => 'INSUFFICIENT_GCS_PERMISSIONS',
         self::INVALID_FILE_INFO => 'INVALID_FILE_INFO',
         self::UNSUPPORTED_DATABASE_SETTINGS => 'UNSUPPORTED_DATABASE_SETTINGS',
+        self::MYSQL_PARALLEL_IMPORT_INSUFFICIENT_PRIVILEGE => 'MYSQL_PARALLEL_IMPORT_INSUFFICIENT_PRIVILEGE',
+        self::LOCAL_INFILE_OFF => 'LOCAL_INFILE_OFF',
     ];
 
     public static function name($value)
