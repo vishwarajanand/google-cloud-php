@@ -244,7 +244,8 @@
         "google/shopping-css": "0.2.2",
         "google/shopping-merchant-inventories": "0.3.2",
         "google/shopping-merchant-quota": "0.1.0",
-        "google/shopping-merchant-reports": "0.6.2"
+        "google/shopping-merchant-reports": "0.6.2",
+        "google/storage-control": "0.0.0"
     },
     "suggest": {
         "opis/closure": "May be used to serialize closures to process jobs in the batch daemon. Please require version ^3.",
@@ -431,6 +432,7 @@
             "GPBMetadata\\Google\\Shopping\\Merchant\\Reports\\": "ShoppingMerchantReports/metadata",
             "GPBMetadata\\Google\\Shopping\\Type\\": "ShoppingCommonProtos/metadata/Type",
             "GPBMetadata\\Google\\Spanner\\": "Spanner/metadata",
+            "GPBMetadata\\Google\\Storage\\Control\\": "StorageControl/metadata",
             "GPBMetadata\\Google\\Storagetransfer\\": "StorageTransfer/metadata",
             "GPBMetadata\\Grafeas\\": "Grafeas/metadata",
             "Google\\Analytics\\Admin\\": "AnalyticsAdmin/src",
@@ -588,6 +590,7 @@
             "Google\\Cloud\\StorageInsights\\": "StorageInsights/src",
             "Google\\Cloud\\StorageTransfer\\": "StorageTransfer/src",
             "Google\\Cloud\\Storage\\": "Storage/src",
+            "Google\\Cloud\\Storage\\Control\\": "StorageControl/src",
             "Google\\Cloud\\Support\\": "Support/src",
             "Google\\Cloud\\Talent\\": "Talent/src",
             "Google\\Cloud\\Tasks\\": "Tasks/src",
