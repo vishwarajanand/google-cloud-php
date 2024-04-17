@@ -244,14 +244,24 @@ class ResumableUploader extends AbstractUploader
 
         $request = new Request(
             'POST',
-            $this->uri,
+            $this->uri.'name='.urlencode($this->metadata['name']),
             $headers,
             $body
         );
 
         $response = $this->requestWrapper->send($request, $this->requestOptions);
 
-        return $this->resumeUri = $response->getHeaderLine('Location');
+        $this->resumeUri = $response->getHeaderLine('Location');
+        if ($this->resumeUri) {
+            return $this->resumeUri;
+        }
+        if (!$this->resumeUri) {
+            $this->resumeUri = $this->uri.'name='.urlencode($this->metadata['name'])
+                .'&uploadType=resumable&upload_id='.$response->getHeaderLine('x-guploader-uploadid');
+        }
+
+        // failed to create a resume URI
+        return $this->resumeUri;
     }
 
     /**

@@ -39,5 +39,16 @@
         "psr-4": {
             "Google\\Cloud\\Storage\\Tests\\": "tests"
         }
+    },
+    "repositories": {
+        "local": {
+            "type": "path",
+            "url": "../Core",
+            "options": {
+                "versions": {
+                    "google/cloud-core": "1.100"
+                }
+            }
+        }
     }
 }

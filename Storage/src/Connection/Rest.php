@@ -382,6 +382,9 @@ class Rest implements ConnectionInterface
         $uploadType = AbstractUploader::UPLOAD_TYPE_RESUMABLE;
         if ($args['streamable']) {
             $uploaderClass = StreamableUploader::class;
+        } elseif (isset($args['customUploader'])) {
+            $uploaderClass = $args['customUploader'];
+            $uploadType = 'custom';
         } elseif ($args['resumable']) {
             $uploaderClass = ResumableUploader::class;
         } else {
@@ -393,7 +396,7 @@ class Rest implements ConnectionInterface
             'bucket' => $args['bucket'],
             'query' => [
                 'predefinedAcl' => $args['predefinedAcl'],
-                'uploadType' => $uploadType,
+                // 'uploadType' => $uploadType,
                 'userProject' => $args['userProject']
             ]
         ];
@@ -443,9 +446,9 @@ class Rest implements ConnectionInterface
 
         $validate = $this->chooseValidationMethod($args);
         if ($validate === 'md5') {
-            $args['metadata']['md5Hash'] = base64_encode(Utils::hash($args['data'], 'md5', true));
+            // $args['metadata']['md5Hash'] = base64_encode(Utils::hash($args['data'], 'md5', true));
         } elseif ($validate === 'crc32') {
-            $args['metadata']['crc32c'] = $this->crcFromStream($args['data']);
+            // $args['metadata']['crc32c'] = $this->crcFromStream($args['data']);
         }
 
         $args['metadata']['name'] = $args['name'];
